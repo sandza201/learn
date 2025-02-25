@@ -21,6 +21,8 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/shipment', [\App\Http\Controllers\ShipmentController::class, 'create'])->name('shipment.create');
-Route::post('/shipment/store/{delivery}', [\App\Http\Controllers\ShipmentController::class, 'store'])->name('shipment.store');
+Route::get('/zones', [\App\Http\Controllers\ShipmentController::class, 'zones'])->name('zones.create');
+Route::get('/zones/store', [\App\Http\Controllers\ShipmentController::class, 'zonesStore'])->name('zones.store');
+Route::post('/shipment/store', [\App\Http\Controllers\ShipmentController::class, 'store'])->name('shipment.store');
 
 require __DIR__ . '/auth.php';
